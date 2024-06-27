@@ -12,6 +12,7 @@ from .models import Document, DocumentCreate, DocumentUpdate
 
 def get(*, db_session, document_id: int) -> Optional[Document]:
     """Returns a document based on the given document id."""
+    print("Added a log..")
     return db_session.query(Document).filter(Document.id == document_id).one_or_none()
 
 
